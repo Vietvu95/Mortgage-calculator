@@ -1,18 +1,23 @@
 import React, { Fragment } from 'react'
 import SliderComponent from './common/SliderComponent'
 
-const SliderSelect = () => {
+const SliderSelect = ({data, setData}) => {
+
+  const bank_limit = 1000000;
   return (
     <Fragment>
       <SliderComponent
       label='Home Value'
-      min={0}
-      max={250}
-      defaultValue={20}
+      min={1000}
+      max={bank_limit}
+      defaultValue={data.homeValue}
+      value={data.homeValue}
       step={100}
-      onChange={(e, value) => console.log(value)}
+      onChange={(e, value) => setData({
+        homeValue: value
+      })}
       unit="$"
-      amount={3000}
+      amount={data.homeValue}
     />
     <SliderComponent
       label='Deposit Amount'

@@ -3,24 +3,34 @@ import Navbar from "./components/Navbar";
 import Result from "./components/Result";
 import SliderSelect from "./components/SliderSelect";
 import TenureSelect from "./components/TenureSelect";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <Navbar />
-      <Container maxWidth="lg" sx={{ mt: 4 }}>
-        <Grid container spacing={5}>
-          <Grid item xs={12} md={6}>
-            <SliderSelect />
-            <TenureSelect />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Result />
-          </Grid>
+
+  const [data, setData] = useState({
+    homeValue: 3000,
+    depositAmount: 500,
+    loanAmount: 700,
+    loanTerm: 5
+  });
+
+
+return (
+  <div className="App">
+    <Navbar />
+    <Container maxWidth="lg" sx={{ mt: 4 }}>
+      <Grid container spacing={5}>
+        <Grid item xs={12} md={6}>
+          <SliderSelect data={data} setData={setData}/>
+          <TenureSelect />
         </Grid>
-      </Container>
-    </div>
-  );
+        <Grid item xs={12} md={6}>
+          <Result />
+        </Grid>
+      </Grid>
+    </Container>
+  </div>
+);
 }
 
 export default App;

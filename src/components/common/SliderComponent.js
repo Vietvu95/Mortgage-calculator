@@ -2,9 +2,9 @@ import React from 'react'
 import Slider from '@mui/material/Slider';
 import { Stack, Typography } from '@mui/material';
 
-const SliderComponent = ({ defaultValue, min, max, step, onChange, value, label, unit,amount }) => {
+const SliderComponent = ({ defaultValue, min, max, step, onChange, value, label, unit, amount }) => {
   return (
-    <>
+    <Stack my={1.5}>
       <Stack gap={1} direction='column'>
         <Typography variant="subtitle2">{label}</Typography>
         <Typography variant="h5">{unit} {amount}</Typography>
@@ -23,7 +23,7 @@ const SliderComponent = ({ defaultValue, min, max, step, onChange, value, label,
         <Typography variant='caption' color='text.secondary'>{unit} {min}</Typography>
         <Typography variant='caption' color='text.secondary'>{unit} {max}</Typography>
       </Stack>
-    </>
+    </Stack>
     //fake dom. - when parent error occurs
     //same works with <react.fragment> </react.fragment> but needs  import React from 'react'
   );
