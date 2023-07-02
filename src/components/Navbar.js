@@ -1,21 +1,18 @@
-import React from 'react'
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { Container } from '@mui/material';
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { Container } from "@mui/system";
 
 const Navbar = () => {
   return (
     <AppBar position="static">
-      <Container>
+      <Container maxWidth="xl">
         <Toolbar>
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            Bank of Viet
-          </Typography>
+          <Typography variant="h5">Bank of Viet</Typography>
         </Toolbar>
       </Container>
     </AppBar>
-  )
-}
-//fix
-export default Navbar
+  );
+};
+
+export default Navbar;
